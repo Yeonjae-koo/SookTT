@@ -54,11 +54,8 @@ public class Movie {
 
 
     protected Movie() {}
-     // Jpa entity들은 기본 생성자를 가지고 있어야함(hibernate 기준)
 
-    // 모든 데이터가 자동으로 생성, api 사용해서 DB에 넣을 것이기 때문에 하나하나 생성자 X
-
-    // TODO: 다른 entity들은 생성자 만들어주기, 우리가 직접 데이터 넣는 것들
+    // 생성자 생성 완료
 
 
     private Movie(String title, String overview, String poster_path, LocalDate release_date, int run_time, String genre,

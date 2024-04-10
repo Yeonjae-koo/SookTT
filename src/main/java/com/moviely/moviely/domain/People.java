@@ -21,12 +21,12 @@ public class People {
     private long people_id; //credit_id를 primary key로 설정
 
     @Setter @Column
-    private String actor_name;
+    private String actor_name; //배우 이름
     @Setter @Column
-    private String director_name;
+    private String director_name; //감독 이름
 
     protected People() {}
-
+    // 생성자 생성 완료
     private People(String actor_name, String director_name) {
         this.actor_name = actor_name;
         this.director_name = director_name;

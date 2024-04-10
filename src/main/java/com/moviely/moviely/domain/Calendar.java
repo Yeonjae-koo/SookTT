@@ -12,8 +12,7 @@ import java.time.LocalDateTime;
 import java.util.Objects;
 
 @Getter // lombock 이용, 모든 필드 접근 가능
-@ToString // 쉽게 출력 가능
-// 테이블에 인덱스를 걸어서 검색할 때 나올 수 있도록 함(우선 제목과 줄거리만)
+@ToString
 
 @Entity // 엔티티, 테이블임을 명시
 
@@ -21,15 +20,15 @@ public class Calendar extends AuditingFields{ //AuditingFields에다가 상속�
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long calendar_id; //credit_id를 primary key로 설정
+    private long calendar_id; //calendar_id를 primary key로 설정
 
     @Setter @ManyToOne (optional = false)
-    private User user;
+    private User user; // user_id 연결
 
     @Setter
-    private String movie_title;
+    private String movie_title; //영화 제목
     @Setter @Column(length = 500)
-    private String movie_content;
+    private String movie_content; //영화 내용
 
 
 

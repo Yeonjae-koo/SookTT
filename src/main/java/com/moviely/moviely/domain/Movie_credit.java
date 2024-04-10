@@ -9,8 +9,7 @@ import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 import java.util.Objects;
 
 @Getter // lombock 이용, 모든 필드 접근 가능
-@ToString // 쉽게 출력 가능
-// 테이블에 인덱스를 걸어서 검색할 때 나올 수 있도록 함(우선 제목과 줄거리만)
+@ToString
 
 
 @EntityListeners(AuditingEntityListener.class) // 이게 있어야 auditing 동작 가능
@@ -24,14 +23,15 @@ public class Movie_credit {
     private long credit_id; //credit_id를 primary key로 설정
 
     @Setter @ManyToOne (optional = false)
-    private Movie movie;
+    private Movie movie; //movie_id와 연결
     @Setter @ManyToOne (optional = false)
-    private People people;
+    private People people; //poeple_id와 연결
 
 
 
     protected Movie_credit() {}
 
+    // 생성자 생성 완료
     private Movie_credit(Movie movie, People people) {
         this.movie = movie;
         this.people = people;

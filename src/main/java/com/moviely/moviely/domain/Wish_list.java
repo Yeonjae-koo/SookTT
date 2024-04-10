@@ -19,16 +19,17 @@ import java.util.Objects;
 public class Wish_list {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long wish_list_id; //whish_list_id를 primary key로 설정
+    private long wish_list_id; //wish_list_id를 primary key로 설정
 
     @Setter @ManyToOne(optional = false)
-    private User user;
+    private User user; //user_id 연결
     @Setter @ManyToOne(optional = false)
-    private Movie movie;
-
+    private Movie movie; //movie_id 연결
 
 
     protected Wish_list() {}
+
+    // 생성자 생성 완료
 
     private Wish_list(User user, Movie movie) {
         this.user = user;

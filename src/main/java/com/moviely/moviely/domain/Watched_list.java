@@ -22,13 +22,15 @@ public class Watched_list {
     private long wl_id; //whish_list_id를 primary key로 설정
 
     @Setter @ManyToOne(optional = false)
-    private User user;
+    private User user; //user_id 연결
     @Setter @ManyToOne(optional = false)
-    private Movie movie;
+    private Movie movie; //movie_id 연결
     @Setter @ManyToOne(optional = false)
-    private User_rating user_rating;
+    private User_rating user_rating; //rating_id 연결
 
     protected Watched_list() {}
+
+    // 생성자 생성 완료
 
     private Watched_list(User user, Movie movie, User_rating user_rating) {
         this.user = user;

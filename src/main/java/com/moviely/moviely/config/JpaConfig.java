@@ -22,4 +22,6 @@ public class JpaConfig {
         return () -> Optional.of("cs"); // TODO: 스프링 시큐리티로 인증 기능 붙이게 될 때, 연재님께서 수정해주시기
     }
 
+    //dsl설정 안했습니다.
+
 }

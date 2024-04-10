@@ -19,13 +19,13 @@ public class User_rating {
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long rating_id; //rating_id를 primary key로 설정
 
-    @Setter @ManyToOne(optional = false) private User user;
-    @Setter @ManyToOne(optional = false) private Movie movie;
+    @Setter @ManyToOne(optional = false) private User user; //user_id연결
+    @Setter @ManyToOne(optional = false) private Movie movie; //movie_id연결
 
-    @Setter private float rating; //
+    @Setter private float rating; //별점 추가
 
     protected User_rating() {}
-
+    // 생성자 생성 완료
     private User_rating(User user, Movie movie, float rating) {
         this.user = user;
         this.movie = movie;
